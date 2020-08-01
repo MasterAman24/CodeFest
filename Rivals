@@ -1,0 +1,32 @@
+import java.util.*;
+class Rivals
+{
+    public static void main(String []args)
+    {
+        double h1 = 293;
+        double r1 = 2.6;
+        double h2 = 130;
+        double r2 = 5.0;
+        double P1=0;
+        double A1=293;
+        double P2=0;
+        double A2=130;
+        double t=1;
+        int week=0;
+        for(t = 1;;)
+        {
+            P1=A1*(Math.pow((1+(r1/100)),t));
+            P2=A2*(Math.pow((1+(r2/100)),t));
+            if(P1<P2)
+            {
+                week = (int)t;
+                break;
+            }
+            else
+            {
+                t++;
+            }
+        }
+        System.out.println("The rival business gets more hits after "+week+" weeks");
+    }
+}
