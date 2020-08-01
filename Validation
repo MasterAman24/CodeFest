@@ -1,0 +1,44 @@
+import java.util.*;
+class Validation
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a word to validate");
+        String w = sc.next().trim();
+        int len=w.length();
+        Boolean b =false;
+        if(Character.isUpperCase(w.charAt(0)))
+        {
+            int n = 0;
+            int x = 1;
+            while(n<len)
+            {
+                if(Character.isWhitespace(w.charAt(n)))
+                {
+                    x=0;
+                }
+                n++;
+            }
+            if(x==1)
+            {
+                if(Character.isDigit(w.charAt(len-1)))
+                {
+                    b=true;
+                }
+                else
+                {
+                    b=false;
+                }
+            }
+        }
+        if(b==true)
+        {
+            System.out.println("The word entered is valid");
+        }
+        else
+        {
+            System.out.println("The word entered is not valid");
+        }
+    }
+}
