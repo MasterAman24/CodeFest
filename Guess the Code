@@ -1,0 +1,36 @@
+import java.util.*;
+class Guess_The_Code
+{
+    public static void main()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the actual code: ");
+        int ac = sc.nextInt();
+        System.out.println("Enter the guess");
+        int gc = sc.nextInt();
+        int gc1 = gc;
+        int c1 = 0;
+        int c2 = 0;
+        for(int i=ac,x=1;i>0;i/=10,x++,gc1/=10)
+        {
+            int j = i%10;
+            if(j==gc1%10)
+            {
+                c1++;
+                
+            }
+            else
+            {
+                for(int a = gc/10;a>0;a/=10)
+                {
+                    if(j==a%10)
+                    {
+                        c2++;
+                    }
+                }
+            }
+        }
+        System.out.println("Number of digits which are correct and are in correct position: "+c1);
+        System.out.println("Number of digits which are correct but are not in correct position: "+c2);
+    }
+}
